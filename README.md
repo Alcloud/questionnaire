@@ -8,9 +8,7 @@ The application which present a questionnaire for the user to fill out.
   ``` 
    /questionnaire
  ```
- where
-   `userId=[string]`
-
+ 
 GET Request example:
   ```
 GET /questionnaire 
