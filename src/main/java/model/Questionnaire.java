@@ -8,9 +8,9 @@ import java.util.Map;
 /**
  * The questionnaire class fills out the questionnaire with questions.
  *
- * @author  Aleksei Piatkin
+ * @author Aleksei Piatkin
  * @version 1.0
- * @since   2020-01-26
+ * @since 2020-01-26
  */
 public class Questionnaire {
 

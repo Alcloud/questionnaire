@@ -2,7 +2,6 @@ package view;
 
 import controller.QuestionnaireController;
 import model.Question;
-import model.Questionnaire;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -54,7 +53,7 @@ public class ConsoleView {
         // step counter
         int count = 1;
 
-        while (count <= Questionnaire.getQuestions().size()) {
+        while (count <= QuestionnaireController.getAllQuestions().size()) {
             printQuestion(count);
 
             // retrieve user answer
@@ -66,9 +65,9 @@ public class ConsoleView {
                     count--;
                 }
 
-                // answer on the question
-            } else if (answer > 0 && answer <= Questionnaire.getQuestions().get(count).getAnswerChoice().size()) {
-                QuestionnaireController.setAnswers(count, answer);
+                // answer to the question
+            } else if (answer > 0 && answer <= QuestionnaireController.getQuestionById(count).getAnswerChoice().size()) {
+                QuestionnaireController.setAnswer(count, answer);
                 count++;
 
                 // enter the illegal answer
@@ -82,7 +81,7 @@ public class ConsoleView {
      * print the question text
      */
     private void printQuestion(int questionId) {
-        Question question = Questionnaire.getQuestions().get(questionId);
+        Question question = QuestionnaireController.getQuestionById(questionId);
 
         System.out.format("\n%s question:\n", questionId);
         System.out.println(question.getQuestionTitle());

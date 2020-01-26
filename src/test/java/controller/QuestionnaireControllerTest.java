@@ -19,11 +19,11 @@ class QuestionnaireControllerTest {
         new Questionnaire();
 
         QuestionnaireController.clearAnswerDB();
-        QuestionnaireController.setAnswers(inputId, inputValue);
+        QuestionnaireController.setAnswer(inputId, inputValue);
 
-        final boolean idExist = QuestionnaireController.getAnswersDB().containsKey(inputId);
-        final int actualValue = QuestionnaireController.getAnswersDB().get(inputId);
-        final int actualSize = QuestionnaireController.getAnswersDB().size();
+        final boolean idExist = QuestionnaireController.getAnswers().containsKey(inputId);
+        final int actualValue = QuestionnaireController.getAnswers().get(inputId);
+        final int actualSize = QuestionnaireController.getAnswers().size();
 
         assertTrue(idExist, "ID didn't match or exist");
         assertEquals(expectedValue, actualValue, "Value didn't match");
@@ -45,9 +45,9 @@ class QuestionnaireControllerTest {
         new Questionnaire();
 
         QuestionnaireController.clearAnswerDB();
-        QuestionnaireController.setAnswers(inputIdOne, inputValueOne);
-        QuestionnaireController.setAnswers(inputIdTwo, inputValueTwo);
-        QuestionnaireController.setAnswers(inputIdThree, inputValueThree);
+        QuestionnaireController.setAnswer(inputIdOne, inputValueOne);
+        QuestionnaireController.setAnswer(inputIdTwo, inputValueTwo);
+        QuestionnaireController.setAnswer(inputIdThree, inputValueThree);
 
         final String actualResult = QuestionnaireController.getResult();
 
